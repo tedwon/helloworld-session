@@ -1,0 +1,21 @@
+== Servlet HttpSession Example Project
+
+=== Run JBoss EAP
+----
+./bin/standalone.sh -c standalone-ha.xml
+----
+
+=== Build & Deploy
+----
+mvn -DskipTests clean package wildfly:deploy
+----
+
+=== Test
+
+http://127.0.0.1:8080/session/simple/?stateful
+http://127.0.0.1:8080/session/HelloWorld
+
+----
+curl -v 127.0.0.1:8080/session/simple/\?stateful
+curl -v 127.0.0.1:8080/session/HelloWorld
+----
